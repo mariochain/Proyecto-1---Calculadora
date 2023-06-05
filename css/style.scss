@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: linear-gradient(180deg, #f06291, #fffde7);
+    &.dark{
+        background: linear-gradient(180deg, #414041, #636363);
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container{
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cabecera{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-content: center;
+    height: 60px;
+}
+
+.titulo{
+    align-items: center;
+    font-size: 40px;
+
+    &.dark{
+        color: white;
+    }
+}
+
+.calculator{
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+    background-color: white;
+    #display{
+        color: #0a1e23;
+        border-style: solid;
+        border-width: 1px;
+        border-top: #000;
+        border-right: #000;
+        border-left: #000;
+        margin: 0 10px;
+        height: 60px;
+        width: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        font-size: 45px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+    #clear{
+        background-color: #ffd5d8;
+        color: #fc4552;
+    }
+    .btn-number{
+        background-color: rgb(213, 209, 209);
+        color: black;
+        font-size: 45px;
+    }
+    .btn-operator{
+        background-color: #ffd0fb;
+        color: #f967f3;
+        font-size: 45px;
+    }
+    .btn-equal{
+        background-color: #adf9e7;
+        color: #000;
+        height: 130px;
+        font-size: 45px;
+    }
+    /*tdark theme*/
+    &.dark{
+        background-color: #1b1b1b;
+        #display{
+            color: #f8fafb;
+        }
+        #clear{
+            background-color: #6d60a2;
+            color: white;
+        }
+        .btn-number{
+            background-color: #8efda6;
+            color: black;
+        }
+        .btn-operator{
+            background-color: #d8c85f;
+            color: black;
+        }
+        .btn-equal{
+            background-color: #d95f37;
+            color: #ffffff;
+            height: 130px;
+        }
+    }
+}
+
+.theme-toogler{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    background-color: #fff956;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    &::before{
+        content: '';
+        position: absolute;        
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+    }
+    &.active{
+        background-color: #414041;    
+    }
+}
+
+#icono{
+    height: 30px;
+}
+
+button{
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 1s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
